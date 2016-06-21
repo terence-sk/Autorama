@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:dataTable value="#{editBean.adList}" var="item" styleClass="order-table" headerClass="order-table-header">
+    <h:column>
+        <f:facet name="header">Nadpis</f:facet>
+        <h:link outcome="inzerat.xhtml">
+            #{item.title} <f:param name="id" value="#{item.id}"/>
+        </h:link>
+    </h:column>
+    <h:column>
+        <f:facet name="contents">Obsah</f:facet>
+        #{item.contents}
+    </h:column>
+    <h:column>
+        <f:facet name="brand">Značka</f:facet>
+        #{item.brand}
+    </h:column>
+    <h:column>
+        <f:facet name="color">Farba</f:facet>
+        #{item.color}
+    </h:column>
+    <h:column>
+        <f:facet name="city">Mesto</f:facet>
+        #{item.city.name}
+    </h:column>
+</h:dataTable>
+
+</html>

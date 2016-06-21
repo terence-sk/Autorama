@@ -1,0 +1,8 @@
+----------------------------------------------------------------
+2016-05-11 13:14:58.591 GMT:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.6.2.1 - (999685): instance a816c00e-0154-9ff4-c244-0000068bdd68 
+on database directory memory:C:\Users\msvon\IdeaProjects\Autorama\Persistence\DaoImpl\testdb  with class loader sun.misc.Launcher$AppClassLoader@52e5376a 
+Loaded from file:/C:/Users/msvon/.m2/repository/org/glassfish/extras/glassfish-embedded-all/3.1/glassfish-embedded-all-3.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_79-b15
+Database Class Loader started - derby.database.classpath=''

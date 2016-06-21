@@ -1,0 +1,215 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    background: white;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.clear {
+    clear: both;
+}
+
+.alignment {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1150px;
+}
+
+.header {
+    background: #eee;
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+}
+
+.header h1 {
+    float: left;
+    margin: 15px 0 0 0;
+    color: green;
+    font-size: 2.3em;
+}
+
+.header h1 a {
+    color: green;
+    text-decoration: none;
+}
+
+.header .menu {
+    float: right;
+}
+
+.header .menu ul {
+    margin: 30px 0 0 0;
+    list-style-type: none;
+}
+
+.header .menu ul li {
+    float: left;
+    margin-left: 20px;
+    font-size: 1.1em;
+}
+
+.header .menu ul li a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.header .menu ul li a:hover {
+    color: green;
+}
+
+.slider {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    background: url('http://autorama.sk/sablona/img/bg_slider.jpg');
+    background-size: 100%;
+}
+
+.slider .contents {
+    margin: 0 auto;
+    width: 70%;
+    margin-top: 60px;
+}
+
+.slider .contents h2 {
+    font-size: 3em;
+    color: white;
+}
+
+.slider .contents p {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.main {
+    width: 100%;
+    margin: 30px 0 30px 0;
+}
+
+.main h3 {
+    font-size: 2em;
+    margin: 0 0 20px 0;
+}
+
+.main .order-table {
+    width: 100%;
+    border-collapse:collapse;
+}
+
+.main .order-table-header {
+    padding: 7px 0;
+    font-weight: bold;
+    color: green;
+    border-bottom:1px solid silver;
+    text-align: left;
+    font-size: 1.2em;
+}
+
+.main .order-table tr {
+    padding: 7px 0;
+    border-bottom: 1px solid silver;
+}
+
+.main .order-table tr td {
+    padding: 7px 0;
+    font-size: 1.1em;
+}
+
+table a {
+    color: green;
+    text-decoration: none;
+}
+
+table a:hover {
+    text-decoration: underline;
+}
+
+.main #form {
+    width: 49%;
+    float: left;
+    margin: 0 4% 2% 0;
+}
+
+.main #form input[type="text"] {
+    width: 96%;
+    max-width: 96%;
+    padding: 2%;
+    margin-bottom: 5px;
+}
+
+.main #form textarea {
+    width: 96%;
+    max-width: 96%;
+    height: 120px;
+    padding: 2%;
+    margin-bottom: 5px;
+}
+
+.main #form input[type="submit"] {
+    background: green;
+    padding: 2%;
+    color: white;
+    border: 0;
+}
+
+.main #form input[type="submit"]:hover {
+    background: black;
+}
+
+.main .h_text {
+    font-weight: bold;
+}
+
+.main iframe {
+    width: 47%;
+    height: 200px;
+    border: 0;
+}
+
+.footer {
+    width: 100%;
+    margin: 0;
+}
+
+.footer .footer_menu {
+    background: #eee;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+}
+
+.footer .footer_menu ul {
+    margin: 15px 0 0 0;
+    list-style-type: square;
+}
+
+.footer .footer_menu ul li {
+    float: left;
+    color: green;
+    margin-right: 20px;
+    padding-right: 20px;
+}
+
+.footer .footer_menu ul li a {
+    color: black;
+    font-size: 1.1em;
+    text-decoration: none;
+}
+
+.footer .footer_menu ul li a:hover {
+    color: green;
+}
+
+.footer .footer_contents {
+    background: green;
+    line-height: 50px;
+}
+
+.footer .footer_contents p {
+    color: white;
+    margin: 0;
+    text-align: right;
+}

@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>AutoramaGuiUserWeb</artifactId>
+	<packaging>war</packaging>
+	<name>AutoramaGuiUserWeb</name>
+
+	<parent>
+		<groupId>sk.umb.progea.autorama</groupId>
+		<artifactId>AutoramaGui</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>sk.umb.progea.autorama</groupId>
+			<artifactId>AutoramaBusinessServiceFacade</artifactId>
+			<version>${project.version}</version>
+			<!--<scope>provided</scope>-->
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-api</artifactId>
+			<version>2.2.12</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-impl</artifactId>
+			<version>2.2.12</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>5.3</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>AutoramaUser</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.3.0.v20150612</version>
+				<configuration>
+					<scanIntervalSeconds>3</scanIntervalSeconds>
+					<stopPort>9966</stopPort>
+					<stopKey>foo</stopKey>
+					<loginServices>
+						<loginService implementation="org.eclipse.jetty.security.HashLoginService">
+							<name>AutoramaRealm</name>
+							<config>src/test/resources/realm.properties</config>
+						</loginService>
+					</loginServices>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>com.sun.faces</groupId>
+						<artifactId>jsf-api</artifactId>
+						<version>2.2.12</version>
+					</dependency>
+					<dependency>
+						<groupId>com.sun.faces</groupId>
+						<artifactId>jsf-impl</artifactId>
+						<version>2.2.12</version>
+					</dependency>
+					<dependency>
+						<groupId>sk.umb.progea.autorama</groupId>
+						<artifactId>AutoramaBusinessServiceFacade</artifactId>
+						<version>${project.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>sk.umb.progea.autorama</groupId>
+						<artifactId>AutoramaBusinessServiceMock</artifactId>
+						<version>${project.version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

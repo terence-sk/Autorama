@@ -1,0 +1,10 @@
+Q: Nejde mi db
+A: Je nainstalovany MySQL server?
+   Ak ano treba spustit aplikaciu prvy krat s odkomentovanym <property name="hibernate.hbm2ddl.auto" value="create"/>
+   A hibernate vytvori DB aj s foreign keys.
+   Potom to treba zakomentovat a pouzivat appku normalne.
+
+Q: Mam DB ale nekomunikuje so serverom
+A: Na JBOSS Serveri treba ist do zlozky standalone/deployments a nakopirovat tam mysql connector.jar
+   Ten sa da ziskat googlenim mysql connector. Nasledne v JBOSS admin konzole vytvorit v datasources
+   java:jboss/datasources/MySQLDS. to musi korespodnovat s nastavenim JTA-DATA-SOURCE v persistence.xml

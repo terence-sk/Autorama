@@ -1,0 +1,19 @@
+<!DOCTYPE glassfish-web-app PUBLIC "-//GlassFish.org//DTD
+GlassFish Application Server 3.1 Servlet 3.0//EN"
+        "http://glassfish.org/dtds/glassfish-web-app_3_0-1.dtd">
+<glassfish-web-app>
+    <session-config>
+        <session-manager/>
+    </session-config>
+    <resource-ref>
+        <res-ref-name>mail/Session</res-ref-name>
+        <jndi-name>mail/Session</jndi-name>
+    </resource-ref>
+    <!-- GLASSFISH v sebe uz JSF ma, ale potrebujem ho mat aj v mavene
+    aby to vedel spustit jetty, ten ho nema. tieto nastavenia glassfishu
+    povedia aby pouzival jsf z mavenu, a jettynu neovplyvnia -->
+    <class-loader delegate="false" />
+    <jsp-config/>
+    <property name="useBundledJsf" value="true" />
+
+</glassfish-web-app>

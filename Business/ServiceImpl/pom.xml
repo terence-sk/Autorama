@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>AutoramaBusinessServiceImpl</artifactId>
+	<packaging>ejb</packaging>
+	<name>AutoramaBusinessServiceImpl</name>
+
+	<parent>
+		<groupId>sk.umb.progea.autorama</groupId>
+		<artifactId>AutoramaBusiness</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>sk.umb.progea.autorama</groupId>
+			<artifactId>AutoramaPersistenceDomainDao</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>sk.umb.progea.autorama</groupId>
+			<artifactId>AutoramaPersistenceDaoImpl</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>sk.umb.progea.autorama</groupId>
+			<artifactId>AutoramaBusinessServiceFacade</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<!-- potrebne pre org.jboss.ejb3.annotation.SecurityDomain v SpravaServiceImpl -->
+			<groupId>org.jboss.ejb3</groupId>
+			<artifactId>jboss-ejb3-ext-api</artifactId>
+			<version>2.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- manualne spustenie integracnych testov: mvn failsafe:integration-test failsafe:verify -->
+			<!-- automaticke spustenie integracnych testov:
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>2.7.1</version>
+				<executions>
+					<execution>
+						<id>integration-test</id>
+						<phase>integration-test</phase>
+						<goals>
+							<goal>integration-test</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>verify</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions> 
+			</plugin>
+			-->
+		</plugins>
+	</build>
+
+</project>

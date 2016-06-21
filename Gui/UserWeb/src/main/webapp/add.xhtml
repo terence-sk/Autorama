@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <title>Autorama</title>
+    <h:outputStylesheet name="css/main.css"  />
+</h:head>
+<h:body>
+    <ui:include src="template/header.xhtml" />
+    <ui:include src="template/slider.xhtml" />
+
+    <h:panelGroup layout="block" styleClass="main">
+        <h:panelGroup layout="block" styleClass="alignment">
+            <h1>Pridávanie a mazanie inzerátov</h1>
+            <h:form id="form">
+
+                <h2>Nový inzerát</h2>
+
+                Nadpis <h:inputText value="#{editBean.newAdd.title}" /> <br />
+                Obsah <h:inputText value="#{editBean.newAdd.contents}" /> <br />
+                Znacka <h:inputText value="#{editBean.newAdd.brand}" /> <br />
+                Farba <h:inputText value="#{editBean.newAdd.color}" /> <br />
+                Kilometre <h:inputText value="#{editBean.newAdd.kmDrivenMonthly}" /> <br />
+                Mesto <h:selectOneMenu value="#{editBean.newAdd.city}">
+                        <f:selectItems value="#{editBean.cityList}" var="city" itemValue="#{city.id}"
+                                       itemLabel="#{city.name}"/>
+                        <f:converter binding="#{cityConverter}" />
+                      </h:selectOneMenu>
+                <br />
+                <h:messages /> <!--Zobrazi sa len ak su errory pri validacii -->
+                <h:commandButton value="Pridat" action="#{editBean.addNewAdvertisement}"  />
+
+            </h:form>
+
+            <div class="clear"></div>
+
+            <h:form>
+                <h2><h:outputText value="Mazanie existujúcich inzerátov"/></h2>
+                <h:dataTable value="#{editBean.adList}" var="item" styleClass="order-table">
+
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Názov inzerátu" />
+                        </f:facet>
+                        <h:outputText value="#{item.title}"/>
+
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Popis"/>
+                        </f:facet>
+                        <h:outputText value="#{item.contents}"/>
+
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Značka"/>
+                        </f:facet>
+                        <h:outputText value="#{item.brand}"/>
+
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Farba auta"/>
+                        </f:facet>
+
+                        <h:outputText value="#{item.color}"/>
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Mesto"/>
+                        </f:facet>
+                        <h:outputText value="#{item.city.name}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Počet km za mesiac"/>
+                        </f:facet>
+                        <h:outputText value="#{item.kmDrivenMonthly}"/>
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Možnosti"/>
+                        </f:facet>
+                        <h:commandButton value="Vymazať inzerát" action="#{editBean.removeAdvertisement(item)}" immediate="true" />
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </h:panelGroup>
+    </h:panelGroup>
+
+    <ui:include src="template/footer.xhtml" />
+</h:body>
+</html>
+

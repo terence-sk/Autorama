@@ -1,0 +1,38 @@
+<persistence version="2.0"
+		xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+	<persistence-unit name="AutoramaPU" transaction-type="JTA">
+
+		<!-- toto MUSI byt pred class, sice to zbuildi ale hadze error -->
+		<jta-data-source>java:jboss/datasources/MySQLDS</jta-data-source>
+
+		<class>sk.umb.progea.autorama.base.domain.BaseDomain</class>
+		<class>sk.umb.progea.autorama.advertisement.domain.Advertisement</class>
+		<class>sk.umb.progea.autorama.advertisement.domain.User</class>
+		<class>sk.umb.progea.autorama.advertisement.domain.County</class>
+		<class>sk.umb.progea.autorama.advertisement.domain.City</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+			<!--<property name="hibernate.show_sql" value="true"/>-->
+			<!--<property name="hibernate.format_sql" value="true"/>-->
+			<property name="hibernate.connection.username" value="root"/>
+			<property name="hibernate.connection.password" value="root"/>
+<!-- 			<property name="hibernate.hbm2ddl.auto" value="create"/>-->
+<!--			<property name="hibernate.id.new_generator_mappings" value="true"/>-->
+<!--			<property name="hibernate.default_schema" value="inzpo"/>-->
+<!-- TODO nove -->
+		<!--<properties>-->
+			<!--<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>-->
+			<!--<property name="javax.persistence.jdbc.url" value="jdbc:derby:memory:autorama;create=true"/>-->
+			<!--<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>-->
+			<!--<property name="eclipselink.ddl-generation" value="create-tables"/>-->
+			<!--<property name="eclipselink.logging.level.sql" value="FINE"/>-->
+			<!--<property name="eclipselink.logging.parameters" value="true"/>-->
+		</properties>
+
+	</persistence-unit>
+
+</persistence>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <title>Autorama</title>
+    <h:outputStylesheet name="css/main.css"  />
+</h:head>
+<h:body>
+    <ui:include src="template/header.xhtml" />
+
+    <h:panelGroup layout="block" styleClass="main">
+        <h:panelGroup layout="block" styleClass="alignment">
+            <h3>Kontakt</h3>
+            <h:form id="form">
+                <h:outputText value="Meno a priezvisko" />
+                <h:inputText />
+                <h:outputText value="Email" />
+                <h:inputText />
+                <h:outputText value="Obsah správy" />
+                <h:inputTextarea />
+                <h:commandButton value="Odoslať" action="index.xhtml" />
+            </h:form>
+
+            <p class="h_text">V prípade nejakých problémov alebo požiadaviek nás neváhajte kontaktovať na email pomocou kontaktného formulára, alebo nám rovno zavolajte na nižšie uvedené telefónne číslo.</p>
+            <p>info@martinrumanovsky.sk</p>
+            <p>+421 949 612 022</p>
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d84199.19409647372!2d19.060930819233814!3d48.739402139119676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47153de36e8ad42f%3A0xf8223f8a0b8b9032!2sBansk%C3%A1+Bystrica!5e0!3m2!1ssk!2ssk!4v1462136178755"></iframe>
+        </h:panelGroup>
+    </h:panelGroup>
+
+    <ui:include src="template/footer.xhtml" />
+</h:body>
+</html>
+

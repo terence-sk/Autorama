@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <title>Autorama</title>
+    <h:outputStylesheet name="css/main.css"  />
+</h:head>
+<h:body>
+    <ui:include src="template/header.xhtml" />
+
+    <h:panelGroup layout="block" styleClass="main">
+        <h:panelGroup layout="block" styleClass="alignment">
+
+            <h3>Inzerát</h3>
+
+            <b>Meno inzerátu: </b>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Title"/>
+                </f:facet>
+                <h:outputText value="#{viewBean.adSo.title}"/>
+
+            </h:column> <br />
+
+            <b>Popis: </b>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Contents"/>
+                </f:facet>
+                 <h:outputText value="#{viewBean.adSo.contents}"/>
+
+            </h:column> <br />
+
+            <b>Značka: </b>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Brand"/>
+                </f:facet>
+                <h:outputText value="#{viewBean.adSo.brand}"/>
+
+            </h:column> <br />
+
+            <b>Farba auta: </b>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Color"/>
+                </f:facet>
+
+                <h:outputText value="#{viewBean.adSo.color}"/>
+            </h:column> <br />
+
+            <b>Mesto: </b>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="City"/>
+                </f:facet>
+                <h:outputText value="#{viewBean.adSo.city.name}"/>
+            </h:column> <br />
+
+            <b>Počet najazdených km: </b>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="KM/Mesiac"/>
+                </f:facet>
+                <h:outputText value="#{viewBean.adSo.kmDrivenMonthly}"/>
+            </h:column>
+
+        </h:panelGroup>
+    </h:panelGroup>
+
+    <ui:include src="template/footer.xhtml" />
+</h:body>
+</html>
+

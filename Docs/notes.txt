@@ -1,0 +1,5 @@
+nazov: Autorama
+studenti: mrumanovsky, msvonava
+
+navrh vsetkeho: db, gui, ...
+
